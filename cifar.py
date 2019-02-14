@@ -13,10 +13,8 @@ def load_batch(fpath, label_key='labels'):
         # decode utf8
         for k, v in d.items():
             del(d[k])
-            try:
-                d[k.decode("utf8")] = v
-            except:
-                d[k] = v
+            #d[k.decode("utf8")] = v
+            d[k] = v
     f.close()
     data = d["data"]
     labels = d[label_key]
